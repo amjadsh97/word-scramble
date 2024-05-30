@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Responsive Web Developer Starter - devchallenges.io</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+<body>
+
+<main class="main">
+  <div class="winner-message" id="winner-message">
+    <h1>Congratulations! You Win!</h1>
+    <button id="close-winner-message">Close</button>
+  </div>
+  <div class="game-wrapper">
+    <img class="logo" src="images/Word%20Scramblle.svg" alt="">
+    <div class="guessed-word"></div>
+
+    <div class="width-content-wrapper">
+      <div class="tries-and-mistakes-wrapper">
+        <div class="tries">
+          <span class="tries-text">Tries <span class="tries-range">(0/5): </span></span>
+          <div class="bullets">
+            <span class="bullet-item"></span><span class="bullet-item"></span><span class="bullet-item"></span><span
+            class="bullet-item"></span><span class="bullet-item"></span>
+          </div>
+        </div>
+        <div class="mistakes">
+          <span class="tries-text">Mistakes: <span class="mistakes-range"></span></span>
+        </div>
+      </div>
+
+      <div class="word"></div>
+    </div>
+
+    <div class="buttons-wrapper">
+      <button class="button-primary" id="random_button">Random</button>
+      <button class="button-primary" id="reset_button">Reset</button>
+    </div>
+
+  </div>
+
+</main>
+
+
+<script src="js/app.js" defer></script>
+</body>
+</html>
