@@ -43,7 +43,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://github.com/amjadsh97/word-scramble
-- Live Site URL: https://link-sharing-app-ten-silk.vercel.app/
+- Live Site URL: https://word-scramble-rho.vercel.app/
 
 ## My process
 
