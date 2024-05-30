@@ -24,15 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	document.addEventListener('keydown', handleKeyPress);
 	randomButton.addEventListener("click", handleRandomButtonClick);
 	resetButton.addEventListener("click", handleResetButtonClick);
-	closeWinnerMessageButton.addEventListener('click', () => {
-		winnerMessage.classList.remove('winner-active');
-		handleRandomButtonClick()
-	});
+	closeWinnerMessageButton.addEventListener('click', handleCloseWinnerPopup);
+
 
 	function handleKeyPress(event) {
 		const key = event.key.toLowerCase();
 		if (key.length === 1 && key.match(/[a-zA-Z]/)) {
-			
+
 			if (key === guessedWord[currentIndex]) {
 				letterElements[currentIndex].innerText = key;
 				currentIndex++;
@@ -47,12 +45,14 @@ document.addEventListener("DOMContentLoaded", () => {
 			if (userMistakes.length > MAX_NUMBER_OF_TRIES_AND_MISTAKES || userTries.length > MAX_NUMBER_OF_TRIES_AND_MISTAKES) {
 				handleResetButtonClick();
 			}
-			
+
 			updateTriesAndMistakes()
 		}
 	}
 
-	function showWinnerMessage() {winnerMessage.classList.add('winner-active', 'animate__animated', 'animate__bounceIn');}
+	function showWinnerMessage() {
+		winnerMessage.classList.add('winner-active', 'animate__animated', 'animate__bounceIn');
+	}
 
 	function handleRandomButtonClick() {
 		guessedWord = getRandomWord();
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 	}
-	
+
 	function updateTriesAndMistakes() {
 		triesRange.innerHTML = `<span>(${userTries.length}/5): </span>`;
 		mistakesRange.innerHTML = `<span>${userMistakes.join(', ')}</span>`;
@@ -112,5 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	function shuffleWord(word) {
 		return word.split('').sort(() => 0.5 - Math.random()).join('');
+	}
+
+	function handleCloseWinnerPopup() {
+		winnerMessage.classList.remove('winner-active');
+		handleRandomButtonClick()
 	}
 });
